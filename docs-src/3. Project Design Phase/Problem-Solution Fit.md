@@ -1,0 +1,9 @@
+# Problem-Solution Fit Canvas
+
+{{HEADER:5 Marks}}
+
+| **1. CUSTOMER SEGMENT(S) [CS]** <br> Young professionals, students, families and first-time home owners in India who plan home interiors, parties and jewelry purchases on a fixed budget | **6. CUSTOMER LIMITATIONS [CL]** <br> Limited, fixed budget; little design or cost knowledge; time-poor; mostly shopping on a phone or laptop through e-commerce sites | **5. AVAILABLE SOLUTIONS - PROS & CONS [AS]** <br> *Manual browsing:* full control but slow and no total view. *Spreadsheets/notes:* flexible but manual and error-prone. *Single-store recommendation:* easy but limited to one platform and not budget-aware |
+|---|---|---|
+| **2. PROBLEMS / PAINS + ITS FREQUENCY [PR]** <br> Overspending in one category; hours spent comparing sites; not knowing what to spend per category. Occurs several times a year (festive season, moving house, events) | **9. PROBLEM ROOT / CAUSE [RC]** <br> Product and service data is spread over many platforms; no single tool combines budget allocation with cross-platform recommendations | **7. BEHAVIOR + ITS INTENSITY [BE]** <br> Opens many tabs, keeps manual running totals, asks friends; high intensity before purchases and events |
+| **3. TRIGGERS TO ACT [TR]** <br> Moving into a new flat, a wedding or birthday coming up, festive sales, a salary or savings milestone | **10. YOUR SOLUTION [SL]** <br> PocketSmart AI: enter a budget and needs; Gemini builds a within-budget plan across categories, checked by the server, with ready search links to each platform and a saved history | **8. CHANNELS OF BEHAVIOR [CH]** <br> **ONLINE:** Amazon, Flipkart, IKEA, Swiggy, Zomato, OYO, social media, review sites <br> **OFFLINE:** Visiting showrooms and jewelers, word of mouth from friends and family |
+| **4. EMOTIONS BEFORE / AFTER [EM]** <br> *Before:* anxious, overwhelmed, unsure <br> *After:* confident, in control, relieved | | |
