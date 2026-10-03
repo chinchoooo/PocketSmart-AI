@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="main" class="wrap">
+  <header class="page-head">
+    <h1>{% block heading %}{% endblock %}</h1>
+    <p>{% block lede %}{% endblock %}</p>
+  </header>
+  <div class="planner-grid">
+    <form class="panel form" data-planner="{% block kind %}{% endblock %}" data-endpoint="{% block endpoint %}{% endblock %}" novalidate>
+      <div class="form-error" data-error role="alert" hidden></div>
+      {% block fields %}{% endblock %}
+      <button class="btn btn-primary btn-block" type="submit">{% block submit %}Build my plan{% endblock %}</button>
+    </form>
+    <section class="panel result-panel" id="result" aria-live="polite" aria-label="Your plan" tabindex="-1">
+      <div class="empty">
+        <h2>Your plan appears here</h2>
+        <p>{% block empty %}Fill in the form and choose Build my plan.{% endblock %}</p>
+        <ul>
+          <li>Every total is checked on the server, so the plan never goes over your budget.</li>
+          <li>Each item links to search results on the right stores.</li>
+          <li>Plans are saved to your history.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock %}

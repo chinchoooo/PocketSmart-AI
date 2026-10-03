@@ -1,0 +1,12 @@
+# Runtime dependencies for PocketSmart AI
+fastapi>=0.115
+uvicorn>=0.30
+jinja2>=3.1
+python-multipart>=0.0.9
+python-jose>=3.3
+bcrypt>=4.1
+email-validator>=2.1
+pydantic>=2.7
+python-dotenv>=1.0
+google-genai>=1.0
+Pillow>=10.3

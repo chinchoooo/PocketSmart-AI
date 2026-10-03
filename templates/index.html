@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Plan any budget{% endblock %}
+{% block content %}
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Know where every rupee goes before you spend it.</h1>
+        <p class="lede">Enter a budget for your home, a party or a piece of jewelry. PocketSmart splits it across what you need, checks the total, and links each item to the stores that sell it.</p>
+        <div class="actions">
+          {% if user %}<a class="btn btn-primary" href="/dashboard">Open your dashboard</a>
+          {% else %}<a class="btn btn-primary" href="/register">Create a free account</a><a class="btn btn-secondary" href="/login">Sign in</a>{% endif %}
+        </div>
+      </div>
+      <div class="demo" id="demo" aria-label="Example budget split">
+        <div class="demo-tabs" role="group" aria-label="Choose a planner">
+          <button type="button" data-demo="home" aria-pressed="true">Home</button>
+          <button type="button" data-demo="party" aria-pressed="false">Party</button>
+          <button type="button" data-demo="jewelry" aria-pressed="false">Jewelry</button>
+        </div>
+        <div class="demo-budget"><label for="demo-range" class="muted">Budget</label><output id="demo-out" class="num" for="demo-range"></output></div>
+        <input id="demo-range" type="range" min="10000" max="200000" step="5000" value="80000">
+        <div class="alloc" id="demo-bar" role="img" aria-label="Budget split"></div>
+        <ul class="legend" id="demo-legend"></ul>
+        <p class="demo-note">An illustration of a typical split. Your plan uses your own quantities and preferences.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="planners">
+    <div class="wrap">
+      <div class="section-head"><h2>Three planners, one account</h2><p>Each planner asks only for what it needs.</p></div>
+      <div class="rows">
+        <div class="row-item"><h3>Home interior</h3><p>Lights, ceiling fans, furniture and dining tables for the rooms you choose, with options from IKEA, Amazon, Flipkart, Myntra and Ajio.</p><span class="takes">Budget, quantities, rooms</span></div>
+        <div class="row-item"><h3>Party</h3><p>Venue, catering, decoration and entertainment for your guest count, with a contingency buffer. Links to Swiggy, Zomato, BookMyShow, OYO and more.</p><span class="takes">Budget, guests, event, venue</span></div>
+        <div class="row-item"><h3>Jewelry</h3><p>Pieces matched to the occasion and, if you add a photo, to the colours and style of your outfit. Links to BlueStone, Tanishq, CaratLane, Amazon and more.</p><span class="takes">Budget, occasion, optional photo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head"><h2>How it works</h2></div>
+      <ol class="steps">
+        <li><h3>Enter your budget</h3><p>Choose a planner and fill in a short form. Quick amounts save typing.</p></li>
+        <li><h3>Get a checked plan</h3><p>Gemini proposes the items. The server rechecks every price and removes anything that would take you over budget.</p></li>
+        <li><h3>Shop and come back</h3><p>Open the store links for each item. Every plan is saved in your history.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>The AI suggests. The server verifies.</h2></div>
+      <div class="checks">
+        <div><h3>Totals you can trust</h3><p>Planned spend and remaining budget are calculated by the server, never taken from the AI's own sums.</p></div>
+        <div><h3>Always an answer</h3><p>If the AI service is unavailable, you get a clearly labelled standard estimate instead of an error.</p></div>
+        <div><h3>Your plans stay yours</h3><p>Passwords are hashed, sessions expire after 30 minutes, and only you can open your saved plans.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

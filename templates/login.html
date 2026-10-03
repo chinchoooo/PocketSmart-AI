@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+<main id="main" class="auth">
+  <h1>Sign in</h1>
+  <p class="sub">Welcome back. Pick up where you left off.</p>
+  <div class="panel">
+    <p id="notice" class="banner-ok" hidden>Account created. Sign in to start planning.</p>
+    <div id="error" class="form-error" role="alert" hidden></div>
+    <form id="login-form" class="form" novalidate>
+      <div class="field" data-field="username">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        <p class="field-error" data-error-for="username" hidden></p>
+      </div>
+      <div class="field" data-field="password">
+        <label for="password">Password</label>
+        <div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button type="button" class="password-toggle" data-toggle="password" aria-pressed="false">Show</button></div>
+        <p class="field-error" data-error-for="password" hidden></p>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </div>
+  <p class="switch">New to PocketSmart? <a href="/register">Create an account</a></p>
+</main>
+{% endblock %}

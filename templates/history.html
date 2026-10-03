@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+<main id="main" class="wrap">
+  <header class="page-head">
+    <h1>Your plans</h1>
+    <p>Every plan you build is saved here. Open one to see the full breakdown and store links.</p>
+  </header>
+  <div class="filters" role="group" aria-label="Filter plans">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="home" aria-pressed="false">Home</button>
+    <button type="button" data-filter="party" aria-pressed="false">Party</button>
+    <button type="button" data-filter="jewelry" aria-pressed="false">Jewelry</button>
+  </div>
+  <ul class="list" id="history" style="margin-bottom:4rem"><li class="muted" style="padding:1.15rem .25rem">Loading your plans</li></ul>
+</main>
+<dialog id="detail" aria-label="Plan details">
+  <div class="dialog-bar"><button type="button" class="btn btn-secondary btn-sm" id="detail-close">Close</button></div>
+  <div class="dialog-body" id="detail-body"></div>
+</dialog>
+{% endblock %}

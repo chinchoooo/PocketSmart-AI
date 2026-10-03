@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Create account{% endblock %}
+{% block content %}
+<main id="main" class="auth">
+  <h1>Create your account</h1>
+  <p class="sub">Save your plans and come back to them any time.</p>
+  <div class="panel">
+    <div id="error" class="form-error" role="alert" hidden></div>
+    <form id="register-form" class="form" novalidate>
+      <div class="field" data-field="username">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="30" required>
+        <p class="hint">3 to 30 characters: letters, numbers, dot, dash or underscore.</p>
+        <p class="field-error" data-error-for="username" hidden></p>
+      </div>
+      <div class="field" data-field="email">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <p class="field-error" data-error-for="email" hidden></p>
+      </div>
+      <div class="field" data-field="password">
+        <label for="password">Password</label>
+        <div class="password-wrap"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+          <button type="button" class="password-toggle" data-toggle="password" aria-pressed="false">Show</button></div>
+        <p class="strength" id="strength" aria-live="polite">Use at least 8 characters.</p>
+        <p class="field-error" data-error-for="password" hidden></p>
+      </div>
+      <div class="field" data-field="confirm">
+        <label for="confirm">Confirm password</label>
+        <input id="confirm" name="confirm" type="password" autocomplete="new-password" required>
+        <p class="field-error" data-error-for="confirm" hidden></p>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Create account</button>
+    </form>
+  </div>
+  <p class="switch">Already have an account? <a href="/login">Sign in</a></p>
+</main>
+{% endblock %}

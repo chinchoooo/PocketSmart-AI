@@ -1,0 +1,56 @@
+{# Reusable form controls so every planner behaves and looks the same. #}
+{% macro money(name, label, hint="", presets=[]) %}
+<div class="field" data-field="{{ name }}">
+  <label for="{{ name }}">{{ label }}</label>
+  <div class="money"><span aria-hidden="true">₹</span>
+    <input id="{{ name }}" name="{{ name }}" type="text" inputmode="numeric" autocomplete="off" placeholder="0" data-money required aria-describedby="{{ name }}-err">
+  </div>
+  {% if hint %}<p class="hint">{{ hint }}</p>{% endif %}
+  {% if presets %}<div class="presets" role="group" aria-label="Quick amounts">
+    {% for p in presets %}<button type="button" class="preset" data-value="{{ p }}">{{ p }}</button>{% endfor %}
+  </div>{% endif %}
+  <p class="field-error" id="{{ name }}-err" data-error-for="{{ name }}" hidden></p>
+</div>
+{% endmacro %}
+
+{% macro stepper(name, label, value, max) %}
+<div class="field" data-field="{{ name }}">
+  <label for="{{ name }}">{{ label }}</label>
+  <div class="stepper">
+    <button type="button" data-step="-1" aria-label="Decrease {{ label|lower }}">&minus;</button>
+    <input id="{{ name }}" name="{{ name }}" type="number" inputmode="numeric" min="0" max="{{ max }}" value="{{ value }}">
+    <button type="button" data-step="1" aria-label="Increase {{ label|lower }}">+</button>
+  </div>
+  <p class="field-error" data-error-for="{{ name }}" hidden></p>
+</div>
+{% endmacro %}
+
+{% macro number(name, label, value, min, max, hint="") %}
+<div class="field" data-field="{{ name }}">
+  <label for="{{ name }}">{{ label }}</label>
+  <input id="{{ name }}" name="{{ name }}" type="number" inputmode="numeric" min="{{ min }}" max="{{ max }}" value="{{ value }}" required>
+  {% if hint %}<p class="hint">{{ hint }}</p>{% endif %}
+  <p class="field-error" data-error-for="{{ name }}" hidden></p>
+</div>
+{% endmacro %}
+
+{% macro select(name, label, options, hint="") %}
+<div class="field" data-field="{{ name }}">
+  <label for="{{ name }}">{{ label }}</label>
+  <select id="{{ name }}" name="{{ name }}">{% for o in options %}<option>{{ o }}</option>{% endfor %}</select>
+  {% if hint %}<p class="hint">{{ hint }}</p>{% endif %}
+  <p class="field-error" data-error-for="{{ name }}" hidden></p>
+</div>
+{% endmacro %}
+
+{% macro choice(name, label, checked=False) %}
+<label class="choice"><input type="checkbox" name="{{ name }}" {% if checked %}checked{% endif %}><span>{{ label }}</span></label>
+{% endmacro %}
+
+{% macro textarea(name, label, placeholder="") %}
+<div class="field" data-field="{{ name }}">
+  <label for="{{ name }}">{{ label }}</label>
+  <textarea id="{{ name }}" name="{{ name }}" rows="3" maxlength="500" placeholder="{{ placeholder }}"></textarea>
+  <p class="field-error" data-error-for="{{ name }}" hidden></p>
+</div>
+{% endmacro %}

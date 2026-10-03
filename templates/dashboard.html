@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<main id="main" class="wrap">
+  <header class="page-head">
+    <h1>Hello, {{ user.full_name or user.username }}</h1>
+    <p>What would you like to plan today?</p>
+  </header>
+  <div class="dash-grid">
+    <section aria-labelledby="start-h">
+      <h2 id="start-h">Start a plan</h2>
+      <ul class="list">
+        <li><a href="/home-planner"><span class="title">Home interior</span><span class="sub">Lights, fans, furniture and tables for your rooms.</span><span class="aside">Open</span></a></li>
+        <li><a href="/party-planner"><span class="title">Party</span><span class="sub">Venue, catering, decoration and entertainment.</span><span class="aside">Open</span></a></li>
+        <li><a href="/jewelry-planner"><span class="title">Jewelry</span><span class="sub">Pieces for the occasion, matched to your outfit.</span><span class="aside">Open</span></a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="recent-h">
+      <h2 id="recent-h">Recent plans</h2>
+      <ul class="list" id="recent"><li class="muted" style="padding:1.15rem .25rem">Loading your plans</li></ul>
+      <p style="margin-top:1rem"><a href="/history">See all plans</a></p>
+    </section>
+  </div>
+</main>
+{% endblock %}

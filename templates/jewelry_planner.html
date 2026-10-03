@@ -1,0 +1,31 @@
+{% extends "planner_base.html" %}
+{% from "_fields.html" import money, select, textarea %}
+{% block title %}Jewelry planner{% endblock %}
+{% block kind %}jewelry{% endblock %}
+{% block endpoint %}/jewelry-budget{% endblock %}
+{% block heading %}Jewelry planner{% endblock %}
+{% block lede %}Pick an occasion and a budget. Add a photo of your outfit and the AI matches jewelry to its colours and style.{% endblock %}
+{% block empty %}Set your budget and occasion, then choose Build my plan.{% endblock %}
+{% block fields %}
+<fieldset>
+  <legend>Budget</legend>
+  {{ money("total_budget", "Total budget", "", [10000, 25000, 50000]) }}
+</fieldset>
+<fieldset>
+  <legend>Occasion and style</legend>
+  {{ select("occasion", "Occasion", ["Wedding", "Birthday", "Anniversary", "Festival", "Office", "Party"]) }}
+  {{ textarea("preferences", "Style preferences", "Gold, minimal, lightweight, traditional") }}
+</fieldset>
+<fieldset>
+  <legend>Outfit photo <span class="muted" style="font-weight:400">(optional)</span></legend>
+  <div class="upload field" data-field="image">
+    <label class="upload-drop" for="image"><span id="upload-label">Choose a JPG, PNG or WEBP photo up to 5 MB</span>
+      <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+    <div id="preview" class="preview" hidden>
+      <img id="preview-img" alt="Preview of your outfit photo">
+      <button type="button" class="btn btn-secondary btn-sm" id="remove-image">Remove photo</button>
+    </div>
+    <p class="field-error" data-error-for="image" hidden></p>
+  </div>
+</fieldset>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "planner_base.html" %}
+{% from "_fields.html" import money, number, select, choice, textarea %}
+{% block title %}Party planner{% endblock %}
+{% block kind %}party{% endblock %}
+{% block endpoint %}/party-budget{% endblock %}
+{% block heading %}Party planner{% endblock %}
+{% block lede %}Give us the budget, guest count and event. We divide it between venue, catering, decoration and entertainment, and keep a small buffer.{% endblock %}
+{% block empty %}Set your budget and guest count, then choose Build my plan.{% endblock %}
+{% block fields %}
+<fieldset>
+  <legend>Budget and guests</legend>
+  {{ money("total_budget", "Total budget", "", [20000, 50000, 100000]) }}
+  {{ number("num_guests", "Number of guests", 20, 1, 5000) }}
+</fieldset>
+<fieldset>
+  <legend>Event</legend>
+  <div class="cols-2">
+    {{ select("party_type", "Party type", ["Birthday", "Wedding", "Anniversary", "Corporate", "Baby shower", "Farewell", "Housewarming"]) }}
+    {{ select("venue_type", "Venue", ["Home", "Banquet hall", "Restaurant", "Hotel", "Outdoor or garden"]) }}
+  </div>
+</fieldset>
+<fieldset>
+  <legend>What to plan for</legend>
+  <div class="choices" data-group="needs">
+    {{ choice("needs_catering", "Catering", True) }}
+    {{ choice("needs_decoration", "Decoration", True) }}
+    {{ choice("needs_entertainment", "Entertainment", True) }}
+  </div>
+  <p class="field-error" data-error-for="needs" hidden></p>
+</fieldset>
+<fieldset>
+  <legend>Preferences</legend>
+  {{ textarea("additional_requirements", "Anything else we should know", "Vegetarian menu, a jungle theme, music for all ages") }}
+</fieldset>
+{% endblock %}

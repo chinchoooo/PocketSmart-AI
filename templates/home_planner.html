@@ -1,0 +1,36 @@
+{% extends "planner_base.html" %}
+{% from "_fields.html" import money, stepper, choice, textarea %}
+{% block title %}Home interior planner{% endblock %}
+{% block kind %}home{% endblock %}
+{% block endpoint %}/home-budget{% endblock %}
+{% block heading %}Home interior planner{% endblock %}
+{% block lede %}Tell us your budget and what the home needs. We split the money across lighting, fans, furniture and tables.{% endblock %}
+{% block empty %}Set your budget and quantities, then choose Build my plan.{% endblock %}
+{% block fields %}
+<fieldset>
+  <legend>Budget</legend>
+  {{ money("total_budget", "Total budget", "The most you want to spend in total.", [25000, 50000, 100000]) }}
+</fieldset>
+<fieldset>
+  <legend>What you need</legend>
+  <div class="steppers">
+    {{ stepper("num_lights", "Lights", 5, 100) }}
+    {{ stepper("num_fans", "Ceiling fans", 2, 50) }}
+    {{ stepper("num_furniture", "Furniture pieces", 2, 100) }}
+    {{ stepper("num_dining_tables", "Dining tables", 1, 20) }}
+  </div>
+</fieldset>
+<fieldset>
+  <legend>Rooms</legend>
+  <div class="choices" data-group="rooms">
+    {{ choice("has_living_room", "Living room", True) }}
+    {{ choice("has_kitchen", "Kitchen", True) }}
+    {{ choice("has_bedroom", "Bedroom") }}
+  </div>
+  <p class="field-error" data-error-for="rooms" hidden></p>
+</fieldset>
+<fieldset>
+  <legend>Preferences</legend>
+  {{ textarea("additional_requirements", "Anything else we should know", "Minimalist style, warm lighting, small rooms") }}
+</fieldset>
+{% endblock %}
