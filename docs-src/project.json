@@ -1,0 +1,11 @@
+{
+  "team_id": "TEAM-ID-TO-BE-FILLED",
+  "project_name": "PocketSmart AI: Your Smart Budget & Recommendation Assistant",
+  "date": "03 October 2026",
+  "repo_url": "https://github.com/<your-github-username>/PocketSmart-AI",
+  "deployed_url": "Not hosted - runs locally at http://localhost:8000 (see run instructions)",
+  "demo_video_url": "To be added after recording",
+  "s1_start": "dd-mm-2026", "s1_end": "dd-mm-2026",
+  "s2_start": "dd-mm-2026", "s2_end": "dd-mm-2026",
+  "s3_start": "dd-mm-2026", "s3_end": "dd-mm-2026"
+}
